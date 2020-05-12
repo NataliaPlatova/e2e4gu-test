@@ -144,7 +144,7 @@ birthdayInput.addEventListener('change', function (e) {
    let birthday = e.target.value.toString();
    let birthYear = birthday.slice(0,4);
    let birthMonth = birthday.slice(6,7);
-   let birthDay = birthday.slice(9,10);
+   let birthDay = birthday.slice(8,10);
 
     /*Сегодняшняя дата*/
    let localDate = new Date().toLocaleDateString('ru-RU');
@@ -162,6 +162,8 @@ birthdayInput.addEventListener('change', function (e) {
            birthdayInput.classList.add('input_invalid');
            validFields.birthday = false;
        }else if(localMonth-birthMonth===0){
+           console.log(localDay);
+           console.log(birthDay);
            if(localDay-birthDay<0){
                birthdayError.style.display = 'block';
                birthdayInput.classList.add('input_invalid');
